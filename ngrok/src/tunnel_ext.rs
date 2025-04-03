@@ -234,7 +234,9 @@ fn tls_config(
                 let mut config = crate::session::host_certs_tls_config()?;
                 if !verify_upstream_tls {
                     config.dangerous().set_certificate_verifier(Arc::new(
-                        danger::NoCertificateVerification::new(rustls::crypto::aws_lc_rs::default_provider()),
+                        danger::NoCertificateVerification::new(
+                            rustls::crypto::aws_lc_rs::default_provider(),
+                        ),
                     ));
                 }
 

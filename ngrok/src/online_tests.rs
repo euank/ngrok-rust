@@ -40,10 +40,6 @@ use hyper::{
     Request,
     Uri,
 };
-use reqwest::{
-    header,
-    StatusCode,
-};
 use hyper_util::{
     rt::TokioExecutor,
     server,
@@ -55,6 +51,10 @@ use rand::{
     distributions::Alphanumeric,
     thread_rng,
     Rng,
+};
+use reqwest::{
+    header,
+    StatusCode,
 };
 use tokio::{
     io::{
